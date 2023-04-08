@@ -1,4 +1,5 @@
-import win32gui
+from adb import *
+from gamectl import *
+import key
 
-phwnd = win32gui.FindWindow(None, '夜神模拟')
-print(phwnd)
+announcement()

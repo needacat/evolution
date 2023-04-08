@@ -1,10 +1,15 @@
+import os
+import time
+
 import win32gui
+
+from gamectl import *
 
 
 class Simulator:
     def __init__(self, window_name: str):
-        self.phwnd = -1
-        self.chwnd = -1
+        self.phwnd = 0
+        self.chwnd = 0
         self.window_name = window_name
 
     def check_simulator_status(self):
@@ -16,15 +21,13 @@ class Simulator:
             return False
 
     def get_phwnd(self):
-        """查找父窗口的句柄, 查找到后会存储到对象属性中"""
+        """查找父窗口的句柄, 并存储到对象属性"""
         self.phwnd = win32gui.FindWindow(None, self.window_name)
-        return self.hwnd
+        return self.phwnd
 
     def get_chwnd(self):
         """查找子窗口的句柄"""
         # self.chwnd =
         pass
 
-    def start(self, settings):
-        """启动模拟器"""
-        pass
+
